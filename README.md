@@ -38,7 +38,7 @@ Bot ini dapat di jalankan di RPP/VPS/Windows, Heroku, Replit.
 * Unduh & Instal FFmpeg [`Klik Disini`](https://ffmpeg.org/download.html) (**Jangan Lupa Tambahkan FFmpeg ke variabel lingkungan PATH**)
 * Unduh & Instal ImageMagick [`Klik Disini`](https://imagemagick.org/script/download.php)
 ```
-git clone https://github.com/irwanx/xyz-wabot
+git clone https://github.com/irwanx/xyz-wabot -b multi-device
 cd xyz-wabot
 npm i
 node . (option)
