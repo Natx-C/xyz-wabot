@@ -9,7 +9,7 @@ let handler = async(m, { conn, args, isPrems, isOwner }) => {
     let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
     conn.reply(m.chat, wait, m)
     if (!isLimit) //conn.sendMessage(m.chat,{ audio: { url: dl_link }}, {quoted: m})
-    conn.sendFile(m.chat, dl_link, `mp3-downloader.mp3`, 0, m, 0, { title: `${title}.mp3`, ptt = false, mtype: 'documentMessage', thumbnail: Buffer.alloc(0), mimetype: 'audio/mpeg' })
+    conn.sendFile(m.chat, dl_link, `mp3-downloader.mp3`, 0, m, 0, { title: `${title}.mp3`, mtype: 'documentMessage', thumbnail: Buffer.alloc(0), mimetype: 'audio/mpeg' })
 }
 handler.help = ['mp3', 'a'].map(v => 'yt' + v + ` <url> [server: ${servers.join(', ')}]`)
 handler.tags = ['downloader']
