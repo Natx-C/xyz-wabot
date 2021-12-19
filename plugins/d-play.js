@@ -36,55 +36,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 *Ukuran File Audio:* ${filesizeF}
 *Ukuran File Video:* ${yt2.filesizeF}
 *Server y2mate:* ${usedServer}`
-
-const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
-    templateMessage: {
-        hydratedTemplate: {
-            locationMessage: { jpegThumbnail: await (await fetch(thumb)).buffer()},
-            hydratedContentText: capt.trim(),
-            hydratedFooterText: wm1,
-            hydratedButtons: [{
-              index: 0,
-               urlButton: {
-                    displayText: 'Donasi',
-                    url: 'https://saweria.co/irwanxyans'
-                }
-            }, {
-              index: 1,
-               urlButton: {
-                    displayText: 'Source Code!',
-                    url: 'https://github.com/irwanx/xyz-wabot'
-                }
-            },
-            {
-               quickReplyButton: {
-                    displayText: 'Video',
-                    id: `.ytv ${vid.url}`
-                },
-                selectedIndex: 2
-            },
-            {
-               quickReplyButton: {
-                    displayText: 'Audio',
-                    id: `.yta ${vid.url}`
-                },
-                selectedIndex: 3
-            },
-            {
-               quickReplyButton: {
-                    displayText: 'Menu',
-                    id: '#menu'
-                },
-                selectedIndex: 4
-            }]
-        }
-    }
-}), { userJid: m.participant || m.key.remoteJid, quoted: m });
-return await conn.relayMessage(
-    m.key.remoteJid,
-    template.message,
-    { messageId: template.key.id }
-)
+await sock.send3Template2UrlButtonLoc(m.chat,capt.trim(), wm, await (await fetch(thumb)).buffer(), 'Video', `.ytv ${vid.url}`, 'Audio', `.yta ${vid.url}`, 'Menu', '#menu', m)
 }
 handler.help = ['play'].map(v => v + ' <pencarian>')
 handler.tags = ['downloader']

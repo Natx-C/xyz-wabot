@@ -75,6 +75,7 @@ Aktif Selama: ${uptime}`
 
                     if (!isNumber(user.money)) user.money = 0
                     if (!isNumber(user.healt)) user.healt = 100
+                    if (!isNumber(user.warning)) user.warning = 0
                     if (!isNumber(user.limit)) user.limit = 10
                     if (!isNumber(user.potion)) user.potion = 0
                     if (!isNumber(user.sampah)) user.sampah = 0
@@ -144,6 +145,7 @@ Aktif Selama: ${uptime}`
 
                     money: 0,
                     healt: 100,
+                    warning: 0,
                     limit: 10,
                     potion: 10,
                     sampah: 0,
@@ -206,22 +208,57 @@ Aktif Selama: ${uptime}`
                     if (!('sPromote' in chat)) chat.sPromote = ''
                     if (!('sDemote' in chat)) chat.sDemote = ''
                     if (!('delete' in chat)) chat.delete = true
+                    if (!('simi' in chat)) chat.simi = false
                     if (!('antiLink' in chat)) chat.antiLink = false
                     if (!('viewonce' in chat)) chat.viewonce = false
-                    if (!('antiToxic' in chat)) chat.antiToxic = false
+                    if (!('antitoxic' in chat)) chat.antitoxic = false
                 } else global.db.data.chats[m.chat] = {
                     isBanned: false,
                     welcome: true,
                     detect: false,
                     sWelcome: '',
+                    simi: false,
                     sBye: '',
                     sPromote: '',
                     sDemote: '',
                     delete: true,
                     antiLink: false,
                     viewonce: false,
-                    antiToxic: true,
+                    antitoxic: false,
                 }
+                let settings = global.db.data.settings[this.user.jid]
+        if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
+        if (settings) {
+          if (!'anon' in settings) settings.anon = true
+          if (!'anticall' in settings) settings.anticall = true
+          if (!'antispam' in settings) settings.antispam = true
+          if (!'antitroli' in settings) settings.antitroli = true
+          if (!'backup' in settings) settings.backup = false
+          if (!isNumber(settings.backupDB)) settings.backupDB = 0
+          if (!'groupOnly' in settings) settings.groupOnly = false
+          if (!'jadibot' in settings) settings.groupOnly = false
+          if (!'nsfw' in settings) settings.nsfw = true
+          if (!isNumber(settings.status)) settings.status = 0
+          if (!'statusUpdate' in settings) settings.statusUpdate = false
+          if (!'antivirus' in settings) settings.antivirus = false
+          if (!'publicjoin' in settings) settings.publicjoin = false
+          if (!'autogetmsg' in settings) settings.autogetmsg = true
+        } else global.db.data.settings[this.user.jid] = {
+          anon: true,
+          anticall: true,
+          antispam: true,
+          antitroli: true,
+          backup: false,
+          backupDB: 0,
+          groupOnly: false,
+          jadibot: false,
+          nsfw: true,
+          status: 0,
+          statusUpdate: false,
+          antivirus: false,
+          publicjoin: false,
+          autogetmsg: true,
+        }
             } catch (e) {
                 console.error(e)
             }

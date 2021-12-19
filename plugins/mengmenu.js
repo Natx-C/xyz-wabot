@@ -10,9 +10,10 @@ let { perfomance } = require('perf_hooks')
 let moment = require('moment-timezone')
 //====================BATAS NGAB=================
 const defaultMenu = {
-  before: `
+  before: `Hallo Kak %name
+%ucapan Have a great day..
 %readmore`.trimStart(),
-  header: '╭━━•›ꪶ ཻུ۪۪ꦽꦼ̷⸙ ━ ━ ━ ━ ꪶ ཻུ۪۪ꦽꦼ̷⸙‹•━━╮\n┃╭┈─────────────⩵꙰ཱི࿐\n┃╰────➤ ↶↷\n╰•͙✩̣̣̣̣ Hai, %name!',
+  header: '╭━━•›ꪶ ཻུ۪۪ꦽꦼ̷⸙ ━ ━ ━ ━ ꪶ ཻུ۪۪ꦽꦼ̷⸙‹•━━╮\n┃╭┈─────────────⩵꙰ཱི࿐\n┃╰── %category ──➤ ↶↷\n╰•͙✩̣̣̣̣ Hai, %name!',
   body: '⁙┃〲 %cmd %islimit %isPremium',
   footer: '⁙╰•°°°🕊°°°°°🕊°°°°°°🕊°°°°°°°°\n',
   after: `
@@ -145,7 +146,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
     let { exp, limit, level, role, registered } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
-    let name = registered ? global.db.data.users[m.sender].name : conn.getName(m.sender)
+    let name = await registered ? global.db.data.users[m.sender].name : conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
     let locale = 'id'
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
@@ -188,8 +189,8 @@ let gc1 = '6281228040725-1623203905@g.us'
 let _gc1 = 'https://chat.whatsapp.com/' + await conn.groupInviteCode(gc1)
 let tulisan = `
 ${ucapan()} ${name}. Have a great day！
-`.trim()
-let sangek = `Berikut adalah list Menu Bot. klik pada "Click Here!" untuk melihat list menu.\n\nJoin juga grup gabut Bot!\nGrup 1: ${_gc1}`
+Terimakasih Atas Kunjungan Anda`.trim()
+let sangek = `Berikut adalah list Menu Bot. klik pada "Click Here!" untuk melihat list menu.\n\nJangan lupa jaga kesehatan yaa... Tetap patuhi prokes dan ikuti vaksinasi\nMari mendukung program pemerintah dalam menanggulangi COVID-19 di Indonesia.\n\nBaca rulus bot dahulu sebelum menggunakan fitur-fitur bot agar tidak terbanned.\n\nJika menemukan eror/bug langsung lapor ke nomor owner..\n\nNB: Bot ini masih terus dikembangkan`
 
 let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
     return {
@@ -416,7 +417,11 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
                 }],
                 "title": "─────「 27 」"
               }
-            ]
+            ], "contextInfo": {
+              "stanzaId": m.key.id,
+              "participant": m.sender,
+              "quotedMessage": m.message
+            }
     }}), { userJid: m.participant || m.key.remoteJid, quoted: m });
     return await conn.relayMessage(
         m.key.remoteJid,

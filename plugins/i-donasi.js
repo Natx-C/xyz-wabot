@@ -10,19 +10,7 @@ let handler = async(m) => {
     ⁙┃ ુོ SAWERIA  : https://saweria.co/irwanxyans
     ⁙┃ 
     ⁙╰•°°°🕊°°°°°🕊°°°°°°🕊°°°°°°°°`    
-    const buttons = [
-        {buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1}
-      ]
-      
-      const buttonMessage = {
-      location: { jpegThumbnail: await(await require('node-fetch')(fla + 'Donasi')).buffer()},
-          caption: donasi,
-          footer: wm,
-          buttons: buttons,
-          headerType: 6
-      }
-      
-      const sendMsg = await sock.sendMessage(m.chat, buttonMessage, {quoted: m, fromMe: false})
+    await sock.sendTemplateButtonLoc(m.chat, donasi, wm, await(await require('node-fetch')(fla + 'Donasi')).buffer(), 'Owner', '#owner', m)
     }
     handler.help = ['donasi']
     handler.tags = ['info']

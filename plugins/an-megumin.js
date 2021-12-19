@@ -4,9 +4,7 @@ let handler = async (m, { conn }) => {
   if (!res.ok) throw 'Error Website sedang down'
   let json = await res.json()
   if (!json.url) throw 'Error!'
-  conn.sendButtonImg(m.chat, 'istri gweh', wm, json.url, [
-      ['Megumin', '#megumin']
-  ], m, { thumbnail: Buffer.alloc(0) })
+  conn.sendTemplate2UrlButtonImg(m.chat, 'Istri gweh', wm, await(await fetch(json.url)).buffer(), 'Megumin', '#megumin', m, { fileCount: 898, fileLength: 10928, thumbnail: Buffer.alloc(0) })
 }
 handler.help = ['megumin']
 handler.tags = ['anime']

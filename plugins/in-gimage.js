@@ -7,14 +7,12 @@ let handler  = async (m, { conn, args, text }) => {
   let results = await gis(text) || []
   let { url, width, height } = pickRandom(results) || {}
   if (!url) return m.reply('404 Not Found')
-  conn.sendButtonImg(m.chat, `
+  conn.sendTemplateButtonImg(m.chat, `
 *── 「 GOOGLE IMAGE 」 ──*
 ${text}
 ➸ *width*: ${width}
 ➸ *height*: ${height}
-`.trim(), wm, url, [
-    [`Image ${text}`, `#image ${text}`]
-], m)
+`.trim(), wm, await(await require('node-fetch')(url)).buffer(), `Image ${text}`, `#image ${text}`, m)
 }
 handler.help = ['image <query>']
 handler.tags = ['internet']

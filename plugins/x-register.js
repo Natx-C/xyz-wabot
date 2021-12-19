@@ -10,7 +10,7 @@ let { MessageType, mentionJid } = require('@adiwajshing/baileys')
 
 let handler = async function (m, { conn, text, usedPrefix }) {
   let user =global.db.data.users[m.sender]
-  let pepe = image
+  let pepe = img
   if (user.registered === true) throw `Anda Sudah Terdaftar\nMau daftar ulang? ${usedPrefix}unreg <SN>`
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   let totalreg = Object.keys(global.db.data.users).length
@@ -36,7 +36,8 @@ let caption = `
 
 *「 ${namabot} 」*
 `.trim()
-conn.sendMessage(m.chat, caption, MessageType.text, ci1fdocs)
+//conn.sendMessage(m.chat, caption, MessageType.text, ci1fdocs)
+conn.sendTemplate2UrlButtonLoc(m.chat, caption, wm, await(await require('node-fetch')(pepe)).buffer(), 'Menu', '#menu', m)
 }
 handler.help = ['daftar', 'reg', 'register']
 handler.tags = ['xp']

@@ -5,20 +5,9 @@ let txt = await res.text()
 
 let arr = txt.split('\n')
 let cita = arr[Math.floor(Math.random() * arr.length)]
-const buttons = [
-    {buttonId: `${usedPrefix + command}`, buttonText: {displayText: 'Next'}, type: 1}
-  ]
-  
-  const btn = {
-      image: {url: cita},
-      caption: "Nihh Ketemuuuu",
-      footer: wm,
-      buttons: buttons,
-      headerType: 4
-  }
-   await sock.sendMessage(m.chat, btn, {quoted: m, fromMe: false})}
-
-handler.tags = ['anu', 'update']
+sock.sendTemplate2UrlButtonImg(m.chat, `Nihhh Ketemuu`, wm1, await (await fetch(cita)).buffer(), `Loli`, `#loli`, m)
+}
+handler.tags = ['anime']
 handler.help = ['loli']
 handler.command = /^(loli)$/i
 handler.limit = true
