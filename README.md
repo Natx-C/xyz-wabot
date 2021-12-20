@@ -7,7 +7,7 @@
   </p> 
   <p align="center"> 
   <a href="https://github.com/irwanx/followers"><img title="Followers" src="https://img.shields.io/github/followers/irwanx?color=blue&style=flat-square"></a> 
-  <a href="https://visitor-badge.glitch.me/badge?page_id=irwanx/xyz-wabot"><img title="Viesitor" src="https://visitor-badge.glitch.me/badge?page_id=irwanx/xyz-wabot"></a> 
+  <a href="https://visitor-badge.glitch.me/badge?page_id=irwanx/xyz-wabot/tree/multi-device"><img title="Viesitor" src="https://visitor-badge.glitch.me/badge?page_id=irwanx/xyz-wabot/tree/multi-device"></a> 
   <a href="https://github.com/irwanx/xyz-wabot/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/irwanx/xyz-wabot?color=red&style=flat-square"></a> 
   <a href="https://github.com/irwanx/xyz-wabot/network/members"><img title="Forks" src="https://img.shields.io/github/forks/irwanx/xyz-wabot?color=red&style=flat-square"></a> 
   <a href="https://github.com/irwanx/xyz-wabot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/irwanx/xyz-wabot?label=watchers&color=blue&style=flat-square"></a> 
