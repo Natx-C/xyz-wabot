@@ -1,5 +1,5 @@
 let handler = function (m) {
-   this.sendContact(m.chat, '62882008369956', 'IrwanX', m)
+   this.sendContact(m.chat, '6285777451324', 'Irwnaan', m)
    return m.reply ('Chat *P* Tidak Di Balas')
    //conn.sendMessage(m.chat, { sticker: require('fs').readFileSync('./src/menu.webp')})
   //let contacts = []
