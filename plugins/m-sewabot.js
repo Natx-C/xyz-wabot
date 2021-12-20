@@ -17,13 +17,13 @@ let handler = async(m, { conn }) => {
 ┃ *〲 ✅Limit UNLIMITED (Tidak Terbatas)
 ┃ 
 ┃ Ayo gabung bersama mereka yang sudah Premium dan mendapatkan banyak keuntungan dengan akses semua fitur bot.
-┃  © XsvsH
+┃  © nat
 ┃ *─★‧ﾟ
 ╰━━━━━━━━⸙
 Pembayaran:
 Saweria: https://saweria.co/irwanxyans (+5.000)
-Dana: 08882611841
-OVO: 08882611841
+Dana: 085726923618
+TELKOMSEL: 081331815772
     
 「Syarat dan Ketentuan」
 1. Bot akan keluar jika sudah waktu nya keluar
@@ -42,11 +42,8 @@ OVO: 08882611841
             footerText: wm,
             mtype: 'listMessage',
             sections: [{title: "Silahkan di pilih", rows: [
-                {title: 'Premium', description: "Rp50.000\nDapatkan fitur Premium Permanent.", rowId:"#masuk"},
-                {title: '4 Bulan', description: "Rp40.000\nSewa bot ke dalam grup selama 4 bulan.", rowId:"#masuk"},
-                {title: '3 Bulan', description: "Rp30.000\nSewa bot ke dalam grup selama 3 bulan.", rowId:"#masuk"},
-                {title: '2 Bulan', description: "Rp20.000\nSewa bot ke dalam grup selama 2 bulan.", rowId:"#masuk"},
-                {title: '1 Bulan', description: "Rp10.000\nSewa bot ke dalam grup selama 1 bulan.", rowId:"#masuk"},
+                {title: 'Premium', description: "Rp10.000\nDapatkan fitur Premium.", rowId:"#masuk"},
+                {title: '1 Bulan', description: "Rp15.000\nSewa bot ke dalam grup selama 1 bulan.", rowId:"#masuk"},
                 {title: '2 Minggu', description: "Rp7.000\nSewa bot ke dalam grup selama 2 minggu.", rowId:"#masuk"},
                 {title: '1 Minggu', description: "Rp5.000\nSewa bot ke dalam grup selama 1 minggu.", rowId:".konfir Saya ignin mendaftarkan 1 minggu"},
                 {title: '12 Jam', description: "Rp.0\nMemasukkan bot ke dalam grup selama 12 Jam(-10 limit)", rowId:".joinf"},

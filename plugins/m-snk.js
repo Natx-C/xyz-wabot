@@ -48,7 +48,7 @@ Peraturan: 4 November 2021
                   index: 0,
                    urlButton: {
                         displayText: 'Donasi',
-                        url: 'https://saweria.co/irwanxyans'
+                        url: 'Telkomsel : 081331815772'
                     }
                 },
                 {
