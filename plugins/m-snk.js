@@ -1,4 +1,10 @@
-const { MessageType } = require('@adiwajshing/baileys')
+const {
+    //default: makeWASocket,
+    //useSingleFileAuthState,
+    WAMessage,
+    proto,
+    generateWAMessageFromContent
+  } = require('@adiwajshing/baileys-md')
 let fetch = require('node-fetch')
 let handler = async(m, { conn }) => {
     let teks = `
@@ -31,7 +37,35 @@ Syarat Ketentuan Bot
 
 Peraturan: 4 November 2021
 `
-    conn.sendMessage(m.chat, teks, MessageType.text, ci1fdocs)
+    //conn.sendMessage(m.chat, {text: teks}, MessageType.text, m)
+    const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
+        templateMessage: {
+            hydratedTemplate: {
+                locationMessage: { jpegThumbnail: await (await fetch(fla + 'Kebijakan Privasi')).buffer()},
+                hydratedContentText: teks.trim(),
+                hydratedFooterText: wm1,
+                hydratedButtons: [{
+                  index: 0,
+                   urlButton: {
+                        displayText: 'Donasi',
+                        url: 'Telkomsel : 081331815772'
+                    }
+                },
+                {
+                   quickReplyButton: {
+                        displayText: 'Menu',
+                        id: `.menu`
+                    },
+                    selectedIndex: 1
+                }]
+            }
+        }
+    }), { userJid: m.participant || m.key.remoteJid, quoted: m });
+    return await conn.relayMessage(
+        m.key.remoteJid,
+        template.message,
+        { messageId: template.key.id }
+    )
 }
 handler.help = ['peraturan']
 handler.command = /^(snk|syarat|peraturan|rules)$/i
