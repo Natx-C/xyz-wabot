@@ -185,8 +185,6 @@ Time: ${waktuwib}
 © irwan_x_yans
 https://github.com/irwanx/xyz-wabot
 Aktif Selama: ${uptime}`
-let gc1 = '6281228040725-1623203905@g.us'
-let _gc1 = 'https://chat.whatsapp.com/' + await conn.groupInviteCode(gc1)
 let tulisan = `
 ${ucapan()} ${name}. Have a great day！
 Terimakasih Atas Kunjungan Anda`.trim()
