@@ -1,5 +1,5 @@
-global.owner = ['628882611841', '62882008369956', '6281319944687'] // Put your number here
-global.mods = ['62882008369956'] // Want some help?
+global.owner = ['6285777451314'] // Put your number here
+global.mods = ['6285777451314'] // Want some help?
 global.prems = [] // Premium user has unlimited limit
 global.APIs = { // API Prefix
   // name: 'https://website'
@@ -16,7 +16,7 @@ global.APIs = { // API Prefix
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
   'https://neoxr-api.herokuapp.com': 'yntkts',
-  'https://api.xteam.xyz': 'd90a9e986e18778b',
+  'https://api.xteam.xyz': 'hairullana',
   'https://irwan-api1-xyz.herokuapp.com': 'IrwanGans',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.xyz': 'apivinz',
@@ -25,8 +25,8 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.packname = ':)'
-global.author = '@irwan_x_yans'
+global.packname = 'Dixie'
+global.author = 'BotWhatsapp'
 
 global.gc1 = '6281228040725-1623203905@g.us'
 global.wait = '「 ⏱️ 」Loading...'

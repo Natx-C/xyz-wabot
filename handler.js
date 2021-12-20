@@ -16,7 +16,7 @@ module.exports = {
         let m = chatUpdate.messages[chatUpdate.messages.length - 1]
         global.img = pickRandom(global.fotom)
         global.sock = conn
-        global.wm1 = `© irwan_x_yans`
+        global.wm1 = `© Dixie`
         global.wait = '「 ⏱️ 」Loading...'
         global.namabot = conn.user.name
         global.fla = pickRandom(global.flaa)
@@ -209,8 +209,8 @@ Aktif Selama: ${uptime}`
                     if (!('sDemote' in chat)) chat.sDemote = ''
                     if (!('delete' in chat)) chat.delete = true
                     if (!('simi' in chat)) chat.simi = false
-                    if (!('antiLink' in chat)) chat.antiLink = false
-                    if (!('viewonce' in chat)) chat.viewonce = false
+                    if (!('antiLink' in chat)) chat.antiLink = true
+                    if (!('viewonce' in chat)) chat.viewonce = true
                     if (!('antitoxic' in chat)) chat.antitoxic = false
                 } else global.db.data.chats[m.chat] = {
                     isBanned: false,
@@ -222,8 +222,8 @@ Aktif Selama: ${uptime}`
                     sPromote: '',
                     sDemote: '',
                     delete: true,
-                    antiLink: false,
-                    viewonce: false,
+                    antiLink: true,
+                    viewonce: true,
                     antitoxic: false,
                 }
                 let settings = global.db.data.settings[this.user.jid]
@@ -248,14 +248,14 @@ Aktif Selama: ${uptime}`
           anticall: true,
           antispam: true,
           antitroli: true,
-          backup: false,
+          backup: true,
           backupDB: 0,
           groupOnly: false,
           jadibot: false,
           nsfw: true,
           status: 0,
           statusUpdate: false,
-          antivirus: false,
+          antivirus: true,
           publicjoin: false,
           autogetmsg: true,
         }
